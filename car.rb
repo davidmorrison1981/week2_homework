@@ -2,18 +2,19 @@ class Car
 
   attr_reader :speed
   attr_reader :fuel_level
+  attr_reader :engine
 
-  def initialize (speed, fuel_level)
+  def initialize (speed, fuel_level, engine)
     @speed = speed
-    @fuel_level = fuel_level
+    @fuel_level= fuel_level
+    @engine = engine
   end
 
-  def acceleration()
-    @speed += 10
-    @fuel_level -=5
+  def acceleration(speed, fuel, engine)
+    @engine.power()
   end
 
-  def break()
+  def brake(speed)
     @speed -= 10 if @speed-10 <=0
   end
 
